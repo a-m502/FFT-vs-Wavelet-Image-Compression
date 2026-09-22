@@ -11,7 +11,7 @@ X0=X[:,:,0]
 X1=X[:,:,1]
 X2=X[:,:,2]
 
-def comp_fft(rgb, p):  #FFT applied to each colour channel 
+def comp_fft(rgb, p):  # FFT applied to each colour channel 
     Xh=np.fft.fft2(rgb)
     Xhflat=Xh.flatten()
     ind=np.argsort((np.abs(Xhflat)))[::-1]
@@ -23,11 +23,9 @@ def comp_fft(rgb, p):  #FFT applied to each colour channel
 
     return Xi
 
-p=[0.1, 0.5, 1, 2, 5, 
-   10, 15, 20, 30, 40, 
-   50,60, 70, 80, 90, 100]   #Percentage of coefficients retained
+p=[0.1, 0.5, 1, 2, 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]   # Percentage of coefficients retained
 
-er=np.array([])   #MSE for each percentage
+er=np.array([])   # MSE for each percentage
 
 for i in p:   
     X0i=comp_fft(X0,i)
