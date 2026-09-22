@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.io import loadmat
 from PIL import Image
-import pywt 
-im= Image.open(r"C:\Users\Abdusamed\Downloads\cat.jpg")
+import pywt
+
+im= Image.open(r"imagepath")
 
 X= np.array(im)
 
